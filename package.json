@@ -12,6 +12,11 @@
     "test": "jest",
     "version": "gulp bump"
   },
+  "jest": {
+    "setupFiles": [
+      "jest-localstorage-mock"
+    ]
+  },
   "main": "dist/next-expired-storage.js",
   "license": "MIT",
   "devDependencies": {
@@ -24,9 +29,11 @@
     "gulp-size": "^2.1.0",
     "gulp-uglify": "^2.1.2",
     "jest": "^23.6.0",
+    "jest-localstorage-mock": "^2.4.0",
     "yargs": "^4.7.1"
   },
   "dependencies": {
-    "next-js-core2": "github:afeiship/next-js-core2"
+    "next-js-core2": "github:afeiship/next-js-core2",
+    "next-local-storage": "github:afeiship/next-local-storage"
   }
 }
