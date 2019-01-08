@@ -1,11 +1,11 @@
 (function() {
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('next-js-core2');
+  var EXPIRATION_PREFIX = '__nx_expired_storage_ts__';
 
   var NxAbstractExpiredStorage = nx.declare('nx.AbstractExpiredStorage', {
     methods: {
       init: function(inEngine) {
-        this.EXPIRATION_PREFIX = '__nx_expired_storage_ts__';
         this.engine = inEngine;
       },
       set: function(inKey, inValue, inExpiration) {
@@ -73,13 +73,12 @@
         return Math.floor(new Date().getTime() / 1000);
       },
       __key: function(inKey) {
-        return this.EXPIRATION_PREFIX + inKey;
+        return EXPIRATION_PREFIX + inKey;
       },
       __keys: function() {
         var keys = this.engine.__keys();
-        var expirationKey = this.EXPIRATION_PREFIX;
         return keys.filter(function(key) {
-          return key.indexOf(expirationKey) === -1;
+          return key.indexOf(EXPIRATION_PREFIX) === -1;
         });
       }
     }
