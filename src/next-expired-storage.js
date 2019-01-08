@@ -5,10 +5,11 @@
 
   var NxExpiredStorage = nx.declare('nx.ExpiredStorage', {
     methods: {
-      init: function(inPrefix) {
+      init: function(inPrefix, inEngine) {
         var prefix = inPrefix || 'exps';
+        var Engine = inEngine || NxLocalStorage();
         this.EXPIRATION_PREFIX = '__nx_expired_storage_ts__';
-        this.engine = new NxLocalStorage(prefix);
+        this.engine = new Engine(prefix);
       },
       set: function(inKey, inValue, inExpiration) {
         this.engine.set(inKey, inValue);
