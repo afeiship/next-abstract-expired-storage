@@ -7,7 +7,7 @@
     methods: {
       init: function(inPrefix) {
         var prefix = inPrefix || 'exps';
-        this.EXPIRATION_KEY_PREFIX = '__nx_expired_storage_ts__';
+        this.EXPIRATION_PREFIX = '__nx_expired_storage_ts__';
         this.engine = new NxLocalStorage(prefix);
       },
       set: function(inKey, inValue, inExpiration) {
@@ -75,11 +75,11 @@
         return Math.floor(new Date().getTime() / 1000);
       },
       __key: function(inKey) {
-        return this.EXPIRATION_KEY_PREFIX + inKey;
+        return this.EXPIRATION_PREFIX + inKey;
       },
       __keys: function() {
         var keys = this.engine.__keys();
-        var expirationKey = this.EXPIRATION_KEY_PREFIX;
+        var expirationKey = this.EXPIRATION_PREFIX;
         return keys.filter(function(key) {
           return key.indexOf(expirationKey) === -1;
         });
