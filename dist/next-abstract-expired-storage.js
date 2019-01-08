@@ -1,15 +1,12 @@
 (function() {
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('next-js-core2');
-  var NxLocalStorage = nx.LocalStorage || require('next-local-storage');
 
-  var NxExpiredStorage = nx.declare('nx.ExpiredStorage', {
+  var NxAbstractExpiredStorage = nx.declare('nx.AbstractExpiredStorage', {
     methods: {
-      init: function(inPrefix, inEngine) {
-        var prefix = inPrefix || 'exps';
-        var Engine = inEngine || NxLocalStorage();
+      init: function(inEngine) {
         this.EXPIRATION_PREFIX = '__nx_expired_storage_ts__';
-        this.engine = new Engine(prefix);
+        this.engine = inEngine;
       },
       set: function(inKey, inValue, inExpiration) {
         this.engine.set(inKey, inValue);
@@ -89,6 +86,6 @@
   });
 
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports = NxExpiredStorage;
+    module.exports = NxAbstractExpiredStorage;
   }
 })();

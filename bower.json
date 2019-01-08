@@ -1,19 +1,13 @@
 {
-  "name": "next-expired-storage",
+  "name": "next-abstract-expired-storage",
   "version": "0.0.1",
   "description": "Micro JS lib that provide local &amp; session storage with expiration time",
-  "main": "dist/next-expired-storage.js",
-  "authors": [
-    "afei"
-  ],
+  "main": "dist/next-abstract-expired-storage.js",
+  "authors": ["afei"],
   "license": "MIT",
-  "keywords": [
-    "next"
-  ],
-  "homepage": "https://github.com/afeiship/next-expired-storage",
-  "moduleType": [
-    "amd"
-  ],
+  "keywords": ["next"],
+  "homepage": "https://github.com/afeiship/next-abstract-expired-storage",
+  "moduleType": ["amd"],
   "ignore": [
     "**/.*",
     "node_modules",

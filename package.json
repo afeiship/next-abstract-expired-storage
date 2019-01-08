@@ -1,8 +1,8 @@
 {
-  "name": "next-expired-storage",
+  "name": "next-abstract-expired-storage",
   "version": "0.0.1",
   "description": "Micro JS lib that provide local &amp; session storage with expiration time",
-  "homepage": "https://github.com/afeiship/next-expired-storage",
+  "homepage": "https://github.com/afeiship/next-abstract-expired-storage",
   "author": {
     "name": "afei",
     "email": "1290657123@qq.com"
@@ -13,11 +13,9 @@
     "version": "gulp bump"
   },
   "jest": {
-    "setupFiles": [
-      "jest-localstorage-mock"
-    ]
+    "setupFiles": ["jest-localstorage-mock"]
   },
-  "main": "dist/next-expired-storage.js",
+  "main": "dist/next-abstract-expired-storage.js",
   "license": "MIT",
   "devDependencies": {
     "del": "^2.2.1",
@@ -30,10 +28,10 @@
     "gulp-uglify": "^2.1.2",
     "jest": "^23.6.0",
     "jest-localstorage-mock": "^2.4.0",
-    "yargs": "^4.7.1"
+    "yargs": "^4.7.1",
+    "next-local-storage": "github:afeiship/next-local-storage"
   },
   "dependencies": {
-    "next-js-core2": "github:afeiship/next-js-core2",
-    "next-local-storage": "github:afeiship/next-local-storage"
+    "next-js-core2": "github:afeiship/next-js-core2"
   }
 }
