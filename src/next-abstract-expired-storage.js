@@ -53,7 +53,7 @@
         );
       },
       empty: function() {
-        this.engine.clears();
+        this.engine.empty();
       },
       update: function(inKey, inExpiration) {
         this.engine.set(this.__key(inKey), this.timestamp() + inExpiration);
