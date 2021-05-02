@@ -10,3 +10,6 @@ package-lock.json
 .idea
 .vscode
 
+# vscode localhistory
+.history
+dist
