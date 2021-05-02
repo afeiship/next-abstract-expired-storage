@@ -19,7 +19,9 @@ npm install -S @jswork/next-abstract-expired-storage
 ## usage
 ```js
 import NxAbstractExpiredStorage from '@jswork/next-abstract-expired-storage';
+import NxLocalStorage from '@jswork/next-local-storage';
 
+const engine = new NxLocalStorage('abc');
 // code goes here:
 ```
 

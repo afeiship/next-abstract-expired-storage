@@ -14,7 +14,7 @@
       },
       get: function (inKey) {
         if (this.isExpired(inKey)) {
-          this.engine.del(inKey);
+          this.engine.set(inKey, null);
           return null;
         }
         return this.engine.get(inKey);
@@ -23,7 +23,7 @@
         nx.each(
           inObject,
           function (key, item) {
-            this.set(key, item.value, item.expiration);
+            this.set(key, item.value, item.expired);
           },
           this
         );
