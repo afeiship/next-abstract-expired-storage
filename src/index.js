@@ -1,4 +1,5 @@
 (function () {
+  // https://github.com/RonenNess/ExpiredStorage
   var global = typeof window !== 'undefined' ? window : this || Function('return this')();
   var nx = global.nx || require('@jswork/next');
   var EXPIRATION_PREFIX = '__nx_expired_storage_ts__';
